@@ -1,0 +1,89 @@
+html,
+* {
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font: caption;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid rebeccapurple;
+  background: #efefef;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+button,
+.button,
+input[type="submit"] {
+  background: rebeccapurple;
+  border: 1px solid purple;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.app {
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.classmate {
+  border: 1px solid rebeccapurple;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.classmate h3 {
+  margin-top: 0;
+}
+
+.classmate-friend {
+  color: rebeccapurple;
+}
+
+.classmate-friend:hover,
+.classmate-friend *:hover {
+  cursor: pointer;
+}
+
+.new-classmate {
+  display: flex;
+}
+
+.new-classmate-input {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2rem 0;
+  gap: 0.5rem;
+}
+
+.buttons button {
+  width: 100%;
+}
+
+.buttons *:hover {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+button:disabled:hover {
+  cursor: auto;
+}
