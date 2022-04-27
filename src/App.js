@@ -19,38 +19,24 @@ const findIndex = (arr, id) => {
 
 const App = () => {
   const [classmates, setClassmates] = useState(initialClassmates);
-  const [friendClassmate, setFriendClassmate] = useState({});
+
   const addClassmate = (name) => {
     const classmate = {
       id: uuidv4(),
       name,
-      friend: false
+      friend: false,
     };
     const newClassmates = [classmate, ...classmates];
     setClassmates(newClassmates);
   };
 
   const updateClassmate = (classmateId, checked) => {
-    console.log(checked);
-    const index = findIndex(classmates, classmateId);
-    classmates[index].friend = checked;
-    setClassmates(classmates);
+    setClassmates((prevClassmates) => {
+      const index = findIndex(prevClassmates, classmateId);
+      prevClassmates[index].friend = checked;
+      return [...prevClassmates];
+    });
   };
-
-  useEffect(() => {
-    if (friendClassmate) {
-      const index = findIndex(classmates, friendClassmate);
-      if (index > -1) {
-        const _classMate = classmates[index];
-        _classMate.friend = friendClassmate.friend;
-        classmates[index] = _classMate;
-        setClassmates((prevState) => {
-          console.log("PreviousState", prevState);
-          return [...classmates];
-        });
-      }
-    }
-  }, [friendClassmate, classmates]);
 
   return (
     <div className="app" data-testid="app">
